@@ -14,7 +14,7 @@ class Student:
 
 
 o = json_to_obj(data, Student)
-print(o.__dict__)
+print(o.name)
 
 p = json_to_obj(data_2, Student)
-print(p.__dict__)
+print(p.school)

@@ -7,12 +7,14 @@ with open("LICENSE", "r") as readme:
     license_x = readme.read()
 
 setup(
-    name='json_utils',
+    name='jangli',
     version='1.0.0',
-    packages=['json_utils'],
+    packages=['jangli'],
     url='https://github.com/AbhimanyuHK/Json_Object_Conv',
-    license=license_x,
+    license='MIT License',
     author='Abimanyu H K',
     author_email='manyu1994@hotmail.com',
-    description=description
+    description='Convert json to python object and vice versa ',
+    long_description=description,
+    long_description_content_type="text/markdown"
 )

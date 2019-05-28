@@ -1,4 +1,4 @@
-from json_utils.json_to_object import json_to_obj
+from jangli.json_to_object import json_to_obj
 
 data = '{"password": "123456", "id": 1, "name": "abhimanyu"}'
 data_2 = '{"password": "123456", "id": 1, "name": "abhimanyu", "school" : "SOHS"}'

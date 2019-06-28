@@ -1,4 +1,9 @@
-# Json_Object_Conv
+# `Jangli`
+
+### Scope
+
+* Data Definition
+* Data mapping  
 
 ### [1] Convert json to python object.
 
@@ -41,4 +46,20 @@ class Student:
 s2 = json_to_obj(data_2, Student)
 print(s2.school)
 
+```
+
+### [3] Custom object list
+```
+class A:
+    def __init__(self, b):
+        self.b = b
+
+
+lt = ListObject(A)
+lt.append(A(7))
+lt.insert(1, A(8))
+
+print(lt)
+
+Output : [<__main__.A object at 0x00CA3730>, <__main__.A object at 0x00CC6E10>]
 ```

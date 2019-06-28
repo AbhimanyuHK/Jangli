@@ -1,6 +1,7 @@
 README.md
 setup.py
 jangli/json_to_object.py
+jangli/list_of_object.py
 jangli.egg-info/PKG-INFO
 jangli.egg-info/SOURCES.txt
 jangli.egg-info/dependency_links.txt

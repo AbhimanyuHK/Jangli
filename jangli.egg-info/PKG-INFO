@@ -1,12 +1,17 @@
 Metadata-Version: 2.1
 Name: jangli
-Version: 1.0.0
-Summary: Convert json to python object and vice versa 
+Version: 1.1.1
+Summary: Data Object Mapping
 Home-page: https://github.com/AbhimanyuHK/Json_Object_Conv
 Author: Abimanyu H K
 Author-email: manyu1994@hotmail.com
 License: MIT License
-Description: # Json_Object_Conv
+Description: # `Jangli`
+        
+        ### Scope
+        
+        * Data Definition
+        * Data mapping  
         
         ### [1] Convert json to python object.
         
@@ -51,5 +56,20 @@ Description: # Json_Object_Conv
         
         ```
         
+        ### [3] Custom object list
+        ```
+        class A:
+            def __init__(self, b):
+                self.b = b
+        
+        
+        lt = ListObject(A)
+        lt.append(A(7))
+        lt.insert(1, A(8))
+        
+        print(lt)
+        
+        Output : [<__main__.A object at 0x00CA3730>, <__main__.A object at 0x00CC6E10>]
+        ```
 Platform: UNKNOWN
 Description-Content-Type: text/markdown

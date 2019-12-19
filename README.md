@@ -5,10 +5,10 @@
 * Data Definition
 * Data mapping  
 
-### [1] Convert json to python object.
+### Convert json to python object.
 
 ```
-from json_utils.json_to_object import json_to_obj
+from jangli.json_utils.json_to_object import json_to_obj
 
 data = '{"password": "123456", "id": 1, "name": "abhimanyu"}'
 
@@ -26,10 +26,10 @@ print(s.name)
 ```
 
 
-### [2] Convert json to python object.
+### Convert json to python object.
 
 ```
-from json_utils.json_to_object import json_to_obj
+from jangli.json_utils.json_to_object import json_to_obj
 
 data_2 = '{"password": "123456", "id": 1, "name": "abhimanyu", "school" : "SOHS"}'
 
@@ -48,8 +48,11 @@ print(s2.school)
 
 ```
 
-### [3] Custom object list
+### Custom object list
 ```
+from jangli.list_of_object import ListObject
+
+
 class A:
     def __init__(self, b):
         self.b = b
@@ -62,4 +65,26 @@ lt.insert(1, A(8))
 print(lt)
 
 Output : [<__main__.A object at 0x00CA3730>, <__main__.A object at 0x00CC6E10>]
+```
+
+### Case Change to CamelCase
+
+```
+from jangli.case_type import CamelCase
+
+
+@CamelCase
+class NewClass:
+
+    def __init__(self):
+        self.a = 7
+        self.b = "hi"
+        self.c = True
+        self._from = None
+
+
+new = NewClass()
+
+print(new.__dict__)
+
 ```

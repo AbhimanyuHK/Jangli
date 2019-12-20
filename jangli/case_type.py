@@ -1,7 +1,14 @@
-class CamelCase:
+class BaseClass:
+
     def __init__(self, function):
         self.function = function
         self.obj = None
+
+    def __instancecheck__(self, dec_class):
+        return self.obj
+
+
+class CamelCase(BaseClass):
 
     def __call__(self, *args, **kwargs):
         try:
@@ -20,9 +27,6 @@ class CamelCase:
             print("Error while converting to camel case : {}".format(e))
             raise e
 
-    def __instancecheck__(self, dec_class):
-        return self.obj
-
     @staticmethod
     def camel_type(snake_str):
         try:
@@ -36,10 +40,7 @@ class CamelCase:
             raise e
 
 
-class PascalCase:
-    def __init__(self, function):
-        self.function = function
-        self.obj = None
+class PascalCase(BaseClass):
 
     def __call__(self, *args, **kwargs):
         try:
@@ -57,9 +58,6 @@ class PascalCase:
         except Exception as e:
             print("Error while converting to pascal case : {}".format(e))
             raise e
-
-    def __instancecheck__(self, dec_class):
-        return self.obj
 
     @staticmethod
     def pascal_type(snake_str):

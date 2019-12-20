@@ -88,3 +88,22 @@ new = NewClass()
 print(new.__dict__)
 
 ```
+
+### String of None to None
+
+```
+from jangli.checker.none_checker import NoneChecker
+
+@NoneChecker
+class A:
+
+    def __init__(self):
+        self.b = 8
+        self.c = "None"
+        self.d = True
+
+
+print(A().__dict__)
+>>> {'b': 8, 'c': None, 'd': True}
+
+```

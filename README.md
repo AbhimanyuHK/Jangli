@@ -5,12 +5,19 @@
 * Data Definition
 * Data mapping  
 
-### Convert json to python object.
+### Convert json to python object
+
+Convert json or dict to model object.
+
+#### Supports 
+* dict
+* json
+* json dumps
 
 ```
-from jangli.json_utils.json_to_object import json_to_obj
+from jangli.json_to_object import json_to_obj
 
-data = '{"password": "123456", "id": 1, "name": "abhimanyu"}'
+data = '{"password": "123456", "id": 1, "name": "john"}'
 
 
 
@@ -26,12 +33,19 @@ print(s.name)
 ```
 
 
-### Convert json to python object.
+### Convert json to python object with static variable
+
+Convert json or dict to model object. Class containing static variables
+
+#### Supports 
+* dict
+* json
+* json dumps
 
 ```
-from jangli.json_utils.json_to_object import json_to_obj
+from jangli.json_to_object import json_to_obj
 
-data_2 = '{"password": "123456", "id": 1, "name": "abhimanyu", "school" : "SOHS"}'
+data_2 = '{"password": "123456", "id": 1, "name": "john", "school" : "SOHS"}'
 
 
 class Student:
@@ -49,6 +63,9 @@ print(s2.school)
 ```
 
 ### Custom object list
+Create list of similar object. Pass a model which you want create a list.
+It only allows model objects which model passed whle creating list of objects.
+  
 ```
 from jangli.list_of_object import ListObject
 
@@ -68,6 +85,8 @@ Output : [<__main__.A object at 0x00CA3730>, <__main__.A object at 0x00CC6E10>]
 ```
 
 ### Case Change to CamelCase
+
+Converter snack case to camel case. 
 
 ```
 from jangli.case_type import CamelCase
@@ -91,6 +110,15 @@ print(new.__dict__)
 
 ### String of None to None
 
+Change string of None to None,
+
+EX : 
+
+String of None is : x = 'None'
+
+After change : x = None
+
+
 ```
 from jangli.checker.none_checker import NoneChecker
 
@@ -105,5 +133,43 @@ class A:
 
 print(A().__dict__)
 >>> {'b': 8, 'c': None, 'd': True}
+
+```
+
+### Re-Try Function
+
+If a function failed one or many times, you can retry N no. of times just by passing retry_value = ?. 
+
+#### If retry_value = 1 
+
+A function will execute ones, mean while any error any occurring function will through exception.
+
+```
+@Retry(retry_value=1)
+def x_fun():
+    print("Function is executing ones")
+
+```
+
+#### If retry_value = 2
+
+A function will execute twice if first execution fails else only ones.
+
+```
+@Retry(retry_value=2)
+def x_fun():
+    print("raise exception")
+    raise Exception("Try twice")
+
+```
+
+#### If  retry_value = 0
+
+A function is disabled and could not execute the function.
+
+```
+@Retry(retry_value=0)
+def x_fun():
+    print("Function is disabled")
 
 ```

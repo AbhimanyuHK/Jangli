@@ -17,7 +17,7 @@ setup(
     name='jangli',
     version=version_x,
     packages=['jangli'],
-    url='https://github.com/AbhimanyuHK/Json_Object_Conv',
+    url='https://github.com/AbhimanyuHK/Jangli',
     license=license_x_y,
     author='Abimanyu H K',
     author_email='manyu1994@hotmail.com',

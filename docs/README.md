@@ -189,7 +189,7 @@ def x_fun():
 
 A function will execute with 3 times retry and no need to raise final failed exception.
 
- ```
+```
 @Retry(retry_value=3, is_raisable=False)
 def x_fun():
     raise Exception("Pass exception")
